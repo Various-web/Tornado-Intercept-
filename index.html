@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#111111">
+<meta name="description" content="Официальный портал разработки Tornado Intercept Official — REDMONT. Разработка завершена, идёт финальное тестирование.">
 <title>TORNADO INTERCEPT OFFICIAL — Development Portal</title>
 <style>
 :root{--bg:#0b0b0d;--panel:#151518;--panel2:#202025;--text:#f3f3f4;--muted:#a5a5ad;--red:#e32636;--line:#303037}
@@ -27,9 +28,13 @@ ul,ol{margin:8px 0 0;padding-left:22px}li{padding:3px 0}li::marker{color:var(--r
 .progress-card{border-color:rgba(227,38,54,.55);background:linear-gradient(135deg,rgba(227,38,54,.12),#151518 58%)}
 .progress-top{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .percent{color:var(--red);font-size:42px;font-weight:900;line-height:1;text-shadow:0 0 22px rgba(227,38,54,.28)}
+.percent.test-percent{color:#e6b85c;text-shadow:0 0 22px rgba(230,184,92,.22)}
 .track{height:12px;margin:17px 0 12px;overflow:hidden;border-radius:99px;background:#303037}
-.fill{width:98%;height:100%;border-radius:inherit;background:linear-gradient(90deg,#a91020,#f04452);box-shadow:0 0 18px rgba(227,38,54,.35);transform-origin:left;animation:progress-fill 1.8s cubic-bezier(.2,.8,.2,1) .45s both}
-@keyframes progress-fill{from{width:0}to{width:98%}}
+.fill,.test-fill{height:100%;border-radius:inherit;transform-origin:left}
+.fill{width:100%;background:linear-gradient(90deg,#a91020,#f04452);box-shadow:0 0 18px rgba(227,38,54,.35);animation:progress-fill 1.8s cubic-bezier(.2,.8,.2,1) .45s both}
+.test-fill{width:60%;background:linear-gradient(90deg,#a97819,#e6b85c);box-shadow:0 0 18px rgba(230,184,92,.3);animation:test-progress-fill 1.8s cubic-bezier(.2,.8,.2,1) .45s both}
+@keyframes progress-fill{from{width:0}to{width:100%}}
+@keyframes test-progress-fill{from{width:0}to{width:60%}}
 .note{color:var(--muted);font-size:13px}
 .community-card,.feedback-card,.update-card,.systems-card{position:relative;overflow:hidden;background:linear-gradient(145deg,#19191d,#111114)}
 .community-card:before{content:"";position:absolute;width:220px;height:220px;right:-90px;top:-110px;border-radius:50%;background:rgba(227,38,54,.12);filter:blur(28px);pointer-events:none}
@@ -44,8 +49,6 @@ ul,ol{margin:8px 0 0;padding-left:22px}li{padding:3px 0}li::marker{color:var(--r
 .status:before{content:"";width:6px;height:6px;border-radius:50%;background:var(--red);box-shadow:0 0 8px rgba(227,38,54,.65)}
 .community-foot{margin-top:16px;padding-top:13px;border-top:1px solid var(--line);color:#85858e;font-size:12px}
 footer{padding:20px 8px 0;color:#777780;text-align:center;font-size:12px}
-
-/* Журнал обновлений и мониторинг */
 .update-list,.system-list{display:grid;gap:10px;margin-top:16px}
 .update-item{padding:15px;border:1px solid var(--line);border-left:3px solid var(--red);border-radius:10px;background:#202025}
 .update-date{color:var(--red);font-size:12px;font-weight:800;letter-spacing:1px}
@@ -54,8 +57,6 @@ footer{padding:20px 8px 0;color:#777780;text-align:center;font-size:12px}
 .system-name{font-weight:700;font-size:14px}.system-status{font-size:12px;font-weight:800;white-space:nowrap}
 .system-status.done{color:#55d69e}.system-status.progress{color:#e6b85c}.system-status.pending{color:#a5a5ad}
 .system-status:before{content:"●";margin-right:6px}.system-note{margin-top:13px;color:var(--muted);font-size:12px}
-
-/* Комментарии и отзывы */
 .feedback-tabs{display:flex;gap:8px;margin:14px 0 18px}
 .feedback-tab{border:1px solid var(--line);border-radius:9px;padding:9px 14px;color:var(--muted);background:#202025;font:inherit;cursor:pointer;transition:.2s ease}
 .feedback-tab.active{color:#fff;border-color:var(--red);background:rgba(227,38,54,.16)}
@@ -83,30 +84,32 @@ footer{padding:20px 8px 0;color:#777780;text-align:center;font-size:12px}
 <header>
   <div class="eyebrow">Official development status report</div>
   <h1>🌪️ TORNADO INTERCEPT OFFICIAL</h1>
-  <p class="subtitle">Текущий этап разработки проекта</p>
+  <p class="subtitle">Текущий статус проекта — финальное тестирование</p>
   <div class="meta">
     <span class="chip" id="currentDate">📅 Загрузка даты...</span>
     <span class="chip">Платформа: Roblox</span>
     <span class="chip">Карта: REDMONT</span>
     <span class="chip">Стиль: чёрно-красный</span>
+    <span class="chip">Этап: тестирование</span>
   </div>
 </header>
 
 <main>
 <section>
   <h2>Общая информация</h2>
-  <p>Разработка <strong>Tornado Intercept Official</strong> продолжается. Проект находится на заключительном этапе подготовки: основное внимание уделяется завершению автомобилей, настройке игровых механик, интеграции систем и финальной проверке игрового процесса.</p>
-  <p>Основной визуальный стиль проекта — <strong>чёрно-красный</strong>.</p>
+  <p>Разработка <strong>Tornado Intercept Official</strong> официально завершена. Проект перешёл на заключительный этап подготовки — масштабное тестирование игровых систем и проверку игрового процесса.</p>
+  <p>Сейчас основное внимание уделяется поиску ошибок, проверке транспорта, интерфейса, игровых механик, сохранения данных и стабильности проекта.</p>
+  <p><strong>Следующий этап — завершение тестирования и подготовка к открытию игры.</strong></p>
 </section>
 
 <section>
   <h2><span class="emoji">🚗</span>Автомобили</h2>
   <ul>
     <li><strong>VORTEX-7 BASTION</strong> — завершён.</li>
-    <li>Остальные автомобили находятся на разных этапах разработки.</li>
-    <li>Остаётся примерно 3–4 автомобиля.</li>
-    <li>Продолжается настройка подвески, колёс, кузова и управляемости.</li>
-    <li>При доработке важно сохранить существующие конструкции и системы автомобилей.</li>
+    <li>Основной автопарк подготовлен к финальной проверке.</li>
+    <li>Проверяются управление, физика, подвеска и поведение автомобилей.</li>
+    <li>Во время тестирования проверяется корректность появления и вызова транспорта.</li>
+    <li>При исправлении ошибок важно сохранить существующие конструкции и системы автомобилей.</li>
   </ul>
 </section>
 
@@ -117,6 +120,7 @@ footer{padding:20px 8px 0;color:#777780;text-align:center;font-size:12px}
     <li>Городская инфраструктура.</li><li>Дороги и дорожные объекты.</li><li>Заправочные станции.</li>
     <li>Автомобильный магазин.</li><li>Магазин оборудования.</li><li>База перехватчиков.</li><li>Пригородные территории.</li>
   </ul>
+  <p>В рамках финального тестирования проверяются доступность локаций, перемещение по карте и корректная работа игровых объектов.</p>
 </section>
 
 <section>
@@ -125,30 +129,54 @@ footer{padding:20px 8px 0;color:#777780;text-align:center;font-size:12px}
   <ul>
     <li><strong>INTERCEPTOR</strong> — режим перехватчика.</li><li><strong>SURVIVAL</strong> — режим выживания.</li>
     <li>Настройки и информационное окно.</li><li>Отдельные игровые элементы HUD.</li>
+    <li>Проверка кнопок, панелей и отображения информации.</li>
   </ul>
 </section>
 
 <section>
   <h2><span class="emoji">🌪️</span>Погодная система и торнадо</h2>
   <p>В проекте предусмотрена динамическая система погоды и несколько типов торнадо с различными визуальными эффектами.</p>
-  <p>Планируется создание новой визуальной системы торнадо с нуля, поскольку предыдущая реализация устарела.</p>
+  <p>Во время проверки оцениваются появление торнадо, работа погодных состояний, визуальные эффекты и взаимодействие игровых механик с окружением.</p>
 </section>
 
 <section>
-  <h2><span class="emoji">🎯</span>Следующие задачи</h2>
-  <ol>
-    <li>Завершить оставшиеся автомобили.</li><li>Довести до готовности управление и физику транспорта.</li>
-    <li>Продолжить финальную доработку REDMONT.</li><li>Завершить погодную систему и новую визуализацию торнадо.</li>
-    <li>Интегрировать игровые механики.</li><li>Провести тестирование и исправить обнаруженные ошибки.</li>
-    <li>Подготовить проект к полноценному релизу.</li>
-  </ol>
+  <h2><span class="emoji">🧪</span>Этап финального тестирования</h2>
+  <p>После завершения разработки началась комплексная проверка проекта. Основная задача — убедиться, что ключевые функции работают корректно до открытия игры.</p>
+  <ul>
+    <li>Проверка появления игроков и точек спавна.</li>
+    <li>Проверка автомобилей, гаража и вызова транспорта.</li>
+    <li>Проверка интерфейса, панелей и кнопок.</li>
+    <li>Проверка игровых систем и механик торнадо.</li>
+    <li>Проверка сохранения данных и игровых наград.</li>
+    <li>Поиск ошибок и проверка стабильности игрового процесса.</li>
+  </ul>
+  <p class="note">Процент тестирования — текущая оценка объёма выполненной проверки, а не гарантия отсутствия ошибок.</p>
 </section>
 
 <section class="progress-card">
-  <div class="progress-top"><div><h2>📊 Общий прогресс разработки</h2><p class="note">Предварительная оценка готовности проекта</p></div><div class="percent">98%</div></div>
-  <div class="track" aria-label="Прогресс разработки: 98%"><div class="fill"></div></div>
-  <p><strong>Проект находится на заключительном этапе разработки.</strong> Оставшиеся задачи связаны с завершением отдельных элементов, интеграцией систем, тестированием и подготовкой релиза.</p>
-  <p class="note">Процент является приблизительной оценкой и не представляет собой результат полного технического аудита проекта.</p>
+  <div class="progress-top"><div><h2>📊 Разработка проекта</h2><p class="note">Основной этап разработки официально завершён</p></div><div class="percent">100%</div></div>
+  <div class="track" aria-label="Разработка завершена на 100%"><div class="fill"></div></div>
+  <p><strong>Разработка Tornado Intercept Official завершена на 100%.</strong> Основной функционал и подготовка проекта завершены. Команда перешла к финальной проверке перед релизом.</p>
+</section>
+
+<section class="progress-card">
+  <div class="progress-top"><div><h2>🧪 Финальное тестирование</h2><p class="note">Проверка игровых систем и исправление ошибок</p></div><div class="percent test-percent">60%</div></div>
+  <div class="track" aria-label="Тестирование пройдено на 60%"><div class="test-fill"></div></div>
+  <p><strong>60% тестирования уже пройдено.</strong> Проверка проекта продолжается. Оставшаяся часть включает дополнительные испытания игровых механик, транспорта и стабильности.</p>
+  <p class="note">Показатель будет обновляться по мере прохождения проверок.</p>
+</section>
+
+<section class="systems-card">
+  <h2>🚀 Подготовка к релизу</h2>
+  <p class="note">Последний этап перед открытием Tornado Intercept Official.</p>
+  <div class="system-list">
+    <div class="system-item"><span class="system-name">Завершение разработки</span><span class="system-status done">100%</span></div>
+    <div class="system-item"><span class="system-name">Проверка игровых систем</span><span class="system-status progress">60%</span></div>
+    <div class="system-item"><span class="system-name">Поиск и исправление ошибок</span><span class="system-status progress">В процессе</span></div>
+    <div class="system-item"><span class="system-name">Финальная подготовка</span><span class="system-status pending">Ожидается</span></div>
+    <div class="system-item"><span class="system-name">Открытие проекта</span><span class="system-status pending">Ожидается</span></div>
+  </div>
+  <p class="system-note">Дата открытия будет объявлена после завершения тестирования.</p>
 </section>
 
 <section class="systems-card">
@@ -162,9 +190,10 @@ footer{padding:20px 8px 0;color:#777780;text-align:center;font-size:12px}
   <h2>📋 Журнал обновлений</h2>
   <p class="note">Последние события и изменения в разработке проекта.</p>
   <div class="update-list">
+    <article class="update-item"><div class="update-date">27 НОЯБРЯ 2026</div><h3>Разработка официально завершена!</h3><p>Основной этап разработки Tornado Intercept Official достиг 100%. Проект перешёл к финальному тестированию. На данный момент проверено уже 60% игрового процесса. Продолжается поиск ошибок и подготовка к предстоящему релизу.</p></article>
     <article class="update-item"><div class="update-date">22 НОЯБРЯ 2026</div><h3>Официальное название проекта</h3><p>Начат переход к названию Tornado Intercept Official, чтобы отличать оригинальный проект от копий.</p></article>
     <article class="update-item"><div class="update-date">22 НОЯБРЯ 2026</div><h3>Обновление официального сайта</h3><p>Добавлены мониторинг игровых систем и журнал обновлений проекта.</p></article>
-    <article class="update-item"><div class="update-date">21 НОЯБРЯ 2026</div><h3>Продолжение разработки</h3><p>Продолжается работа над игровыми механиками, транспортом и системами перехвата.</p></article>
+    <article class="update-item"><div class="update-date">21 НОЯБРЯ 2026</div><h3>Продолжение разработки</h3><p>Продолжалась работа над игровыми механиками, транспортом и системами перехвата.</p></article>
   </div>
 </section>
 
@@ -182,7 +211,7 @@ footer{padding:20px 8px 0;color:#777780;text-align:center;font-size:12px}
 
 <section class="feedback-card" id="feedback">
   <h2><span class="emoji">💬</span>Комментарии и отзывы</h2>
-  <p class="community-intro">Оставьте мнение о проекте Tornado Interceptor. Важно: эта версия хранит записи только локально в браузере текущего устройства. Другие посетители сайта их не увидят.</p>
+  <p class="community-intro">Оставьте мнение о проекте Tornado Intercept. Важно: эта версия хранит записи только локально в браузере текущего устройства. Другие посетители сайта их не увидят.</p>
   <div class="feedback-tabs" role="tablist" aria-label="Раздел обратной связи">
     <button class="feedback-tab active" id="commentsTab" type="button" role="tab" aria-selected="true">Комментарии</button>
     <button class="feedback-tab" id="reviewsTab" type="button" role="tab" aria-selected="false">Отзывы и оценки</button>
@@ -226,11 +255,12 @@ if(dateElement){dateElement.textContent="📅 "+new Date().toLocaleDateString("r
 const projectSystems=[
   {name:"Основной интерфейс",status:"done",label:"Завершено"},
   {name:"Кнопка автомобилей",status:"done",label:"Завершено"},
-  {name:"Автомобили и физика",status:"progress",label:"В разработке"},
-  {name:"Система радара",status:"progress",label:"В разработке"},
-  {name:"Сохранение данных",status:"progress",label:"В разработке"},
-  {name:"Система торнадо",status:"progress",label:"В разработке"},
-  {name:"Награды за перехват",status:"progress",label:"В разработке"}
+  {name:"Автомобили и физика",status:"progress",label:"Проверка"},
+  {name:"Система радара",status:"progress",label:"Проверка"},
+  {name:"Сохранение данных",status:"progress",label:"Проверка"},
+  {name:"Система торнадо",status:"progress",label:"Проверка"},
+  {name:"Награды за перехват",status:"progress",label:"Проверка"},
+  {name:"Спавн и игровые точки",status:"progress",label:"Проверка"}
 ];
 const systemList=document.getElementById("systemList");
 if(systemList){projectSystems.forEach(system=>{const item=document.createElement("div");item.className="system-item";const name=document.createElement("span");name.className="system-name";name.textContent=system.name;const status=document.createElement("span");status.className="system-status "+system.status;status.textContent=system.label;item.append(name,status);systemList.appendChild(item);});}
